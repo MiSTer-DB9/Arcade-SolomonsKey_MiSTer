@@ -3,7 +3,7 @@
 set -euo pipefail
 
 UPSTREAM_REPO="https://github.com/MiSTer-devel/Arcade-SolomonsKey_MiSTer.git"
-CORE_NAME="Arcade_SolomonsKey"
+CORE_NAME="Arcade-SolomonsKey"
 MAIN_BRANCH="master"
 
 echo "Fetching upstream:"

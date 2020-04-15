@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-CORE_NAME="Arcade_SolomonsKey"
+CORE_NAME="Arcade-SolomonsKey"
 MAIN_BRANCH="master"
 
 if [[ "$(git log -n 1 --pretty=format:%an)" == "The CI/CD Bot" ]] ; then
