@@ -106,7 +106,7 @@ module emu
 assign VGA_F1    = 0;
 assign VGA_SCALER= 0;
 wire         CLK_JOY = CLK_50M;         //Assign clock between 40-50Mhz
-wire   [2:0] JOY_FLAG  = {status[30],status[31],status[29]}; //Assign 3 bits of status (31:29) o (63:61)
+	wire   [2:0] JOY_FLAG  = {status[62],status[63],status[61]}; //Assign 3 bits of status (31:29) o (63:61)
 wire         JOY_CLK, JOY_LOAD, JOY_SPLIT, JOY_MDSEL;
 wire   [5:0] JOY_MDIN  = JOY_FLAG[2] ? {USER_IN[6],USER_IN[3],USER_IN[5],USER_IN[7],USER_IN[1],USER_IN[2]} : '1;
 wire         JOY_DATA  = JOY_FLAG[1] ? USER_IN[5] : '1;
@@ -130,8 +130,8 @@ localparam CONF_STR = {
 	"A.SolmnsKey;;",
 	"H0O12,Aspect ratio,Original,Full Screen,[ARC1],[ARC2];",
 	"O35,Scandoubler Fx,None,HQ2x,CRT 25%,CRT 50%,CRT 75%;",
-	"OUV,UserIO Joystick,Off,DB9MD,DB15 ;",
-	"OT,UserIO Players, 1 Player,2 Players;",
+	"Ouv,UserIO Joystick,Off,DB9MD,DB15 ;",
+	"Ot,UserIO Players, 1 Player,2 Players;",
 "-;",
 	"O89,Difficulty,Normal,Middle,Easy,Hard;",
 	"OAB,Lives,3,5,4,2;",
@@ -184,7 +184,7 @@ pll pll
 
 ///////////////////////////////////////////////////
 
-wire [31:0] status;
+wire [63:0] status;
 wire  [1:0] buttons;
 wire        forced_scandoubler;
 wire			direct_video;
